@@ -1,4 +1,6 @@
 "use client";
+
+
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { Context } from "../../components/Clients";
@@ -25,6 +27,7 @@ const Page = () => {
         },
       });
       const data = await res.json();
+      // console.log(data);
       if (!data.success) return toast.error(data.message);
       setUser(data.user);
       toast.success(data.message);
